@@ -14,8 +14,8 @@ import seaborn as sns
 import os
 
 # Directories
-train_dir = 'dataset/dataset/train'
-val_dir = 'dataset/dataset/test'
+train_dir = 'dataset-btp/train'
+val_dir = 'dataset-btp/test'
 
 # Clean out non-image files
 def clean_directory(path):
@@ -114,7 +114,7 @@ class_weights = dict(enumerate(class_weights))
 
 history = model.fit(
     train_generator,
-    epochs=60,
+    epochs=40,
     validation_data=val_generator,
     class_weight=class_weights,
     steps_per_epoch=len(train_generator_raw),
